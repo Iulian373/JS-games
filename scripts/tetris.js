@@ -194,10 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //Rotate the Tetromino
   function rotate() {
     undraw()
-    currentRotation++
-    if (currentRotation === current.length) {
-      currentRotation = 0
-    }
+    currentRotation = (currentRotation + 1) % current.length
     current = theTetrominoes[random][currentRotation]
     draw()
   }
