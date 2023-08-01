@@ -36,13 +36,15 @@ window.onload = function () {
 
 function update() {
     if (gameOver) {
+        let gameOverVar = document.getElementById("game-over");
+        gameOverVar.innerHTML = "Game Over";
         return;
     }
 
-    context.fillStyle = "black";
+    context.fillStyle = "rgb(43, 44, 50)";
     context.fillRect(0, 0, board.width, board.height);
 
-    context.fillStyle = "red";
+    context.fillStyle = "orangered";
     context.fillRect(foodX, foodY, blockSize, blockSize);
 
     if (snakeX == foodX && snakeY == foodY) {
@@ -62,7 +64,7 @@ function update() {
         snakeBody[0][1] = snakeY;
     }
     
-    context.fillStyle = "lime";
+    context.fillStyle = "rgb(53, 129, 76)";
     snakeX += velocityX * blockSize;
     snakeY += velocityY * blockSize;
     context.fillRect(snakeX, snakeY, blockSize, blockSize);
@@ -74,14 +76,12 @@ function update() {
     //check if snake is out of bounds
     if (snakeX < 0 || snakeX >= board.width || snakeY < 0 || snakeY >= board.height) {
         gameOver = true;
-        alert("Game Over");
     }
 
     //check if snake is eating itself
     for (let i = 0; i < snakeBody.length; i++) {
         if (snakeX == snakeBody[i][0] && snakeY == snakeBody[i][1]) {
             gameOver = true;
-            alert("Game Over");
         }
     }
 }
@@ -105,4 +105,21 @@ function changeDirection(event) {
 function placeFood() {
     foodX = Math.floor(Math.random() * cols) * blockSize;
     foodY = Math.floor(Math.random() * rows) * blockSize;
+}
+
+function restart() {
+    snakeX = blockSize * 5;
+    snakeY = blockSize * 5;
+
+    velocityX = 0;
+    velocityY = 0;
+
+    snakeBody = [];
+
+    score = 0;
+    document.getElementById("score").innerHTML = score;
+
+    gameOver = false;
+    let gameOverVar = document.getElementById("game-over");
+    gameOverVar.innerHTML = "";
 }

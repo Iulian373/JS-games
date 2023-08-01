@@ -1,5 +1,79 @@
 body {
+    margin: auto;
     font-family: 'Courier New', 'Courier New', Courier, monospace;
     text-align: center;
+    background: radial-gradient(
+        circle,
+        rgb(118, 122, 190) 0%,
+        rgb(33, 46, 133) 89%,
+        rgb(30, 24, 167) 100%
+    );
+    /* background-color: rgb(53, 129, 76); */
 }
 
+.title {
+    font-size: 3rem;
+    color: rgb(225, 146, 73);
+    margin: 30px;
+    position: relative;
+}
+
+.title::after {
+  content: 'Made with love by Iulian 2023';
+  font-size: 1rem;
+  position: absolute;
+  bottom: -12px;
+  left: 31%;
+  color: rgb(148, 148, 148);
+}
+
+.score-container {
+    font-size: 2rem;
+    color: rgb(225, 146, 73);
+}
+
+#game-over {
+    color: rgb(255, 0, 0);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px wheat;
+}
+
+#restart {
+  position: relative;
+  width: 12rem;
+  height: 2.2rem;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 1px;
+  text-decoration: none;
+  line-height: 23px;
+  font-size: 16px;
+  margin: 20px;
+  text-shadow: -1px -1px 0 #a84155;
+  background: #d25068;
+  border: 1px solid #d25068;
+  background-image: linear-gradient(to bottom, #f66c7b, #d25068);
+  border-radius: 5px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset,
+    0 -1px 0 rgba(255, 255, 255, 0.1) inset, 0 4px 0 #ad4257,
+    0 4px 2px rgba(0, 0, 0, 0.5);
+}
+
+#restart:active {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset,
+    0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+  top: 5px;
+}
+
+#restart:hover {
+  background: #f66c7b;
+  background-image: linear-gradient(top, #d25068, #f66c7b);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset,
+    0 -1px 0 rgba(255, 255, 255, 0.1) inset, 0 4px 0 #cd4d67,
+    0 4px 2px rgba(0, 0, 0, 0.5);
+}
