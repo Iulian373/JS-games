@@ -18,6 +18,7 @@ let snakeBody = [];
 //food variables
 let foodX;
 let foodY;
+let score = 0;
 
 let gameOver = false;
 
@@ -46,7 +47,9 @@ function update() {
 
     if (snakeX == foodX && snakeY == foodY) {
         snakeBody.push([foodX, foodY]);
+        score++;
         placeFood();
+        document.getElementById("score").innerHTML = score;
     }
 
     for (let i = snakeBody.length - 1; i > 0; i--) {
