@@ -16,14 +16,16 @@ body {
     color: rgb(225, 146, 73);
     margin: 30px;
     position: relative;
+    display: inline-block;
 }
 
 .title::after {
   content: 'Made with love by Iulian 2023';
+  white-space: nowrap;
   font-size: 1rem;
   position: absolute;
   bottom: -12px;
-  left: 31%;
+  left: -70px;
   color: rgb(148, 148, 148);
 }
 
