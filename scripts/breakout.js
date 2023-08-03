@@ -92,6 +92,8 @@ function upadate() {
         //game over
         context.font = "27px sans-serif";
         context.fillText("Game Over : Press 'Space' to restart", 30, 250);
+        context.font = "10px sans-serif";
+        context.fillText("You can try to press and hold 'Space'", 165, 300);
         gameOver = true;
     }
 
